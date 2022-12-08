@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+    <header>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="übermich.html">Über mich</a>
+    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>natürlichNatur</title>
+        <link rel="stylesheet" href="kontakt_shop.css">
+    </head>
+    <body>
+        <h1>natürlichNatur</h1>
+        <?php
+        if(isset($_POST["submit"])){
+            mail("tascha.rast@hotmail.ch", "Kontaktformular", 'Name:'.$_POST["name"]. 'Email:'.$_POST["email"].);
+        }
+        ?>
+        <form method="get">
+            <fieldset>
+            <legend>Bestellung eingeben</legend>
+            <p>
+                <label>Name</label>
+            </p>
+            <p>
+                <textarea name="name" rows="1" required></textarea>
+            </p>
+            <p>
+                <label>Email</label>
+            </p>
+            <p>
+                <textarea name="email" rows="1" required></textarea>
+            </p>
+            <p>   
+                <label>Adresse</label> 
+            </p>
+            <p>
+                <textarea name="adresse" rows="2" required></textarea>
+            </p>
+            <p>    
+                <label>Produkt und Menge</label>
+            </p>
+            <p>
+                <select class="produkt" name="produkt">
+                    <option value="produkt">Hagebuttekernels</option>
+                </select>
+                <select class="menge" name="menge">
+                    <option value="menge">1</option>
+                    <option value="menge">2</option>
+                    <option value="menge">3</option>
+                    <option value="menge">4</option>
+                    <option value="menge">5</option>
+                    <option value="menge">6</option>
+                    <option value="menge">7</option>
+                    <option value="menge">8</option>
+                    <option value="menge">9</option>
+                    <option value="menge">10</option>
+                </select>
+            </p>
+            <p>
+                <label>Bemerkungen</label>
+            </p>
+            <p>
+                <textarea rows="2" name="bemerkungen"></textarea>
+            </p>
+            <p>
+                <button type="submit" class="button">Bestellung abschicken</button>
+            </p>
+            </fieldset>  
+        </form>
+    </body>
+</html>
